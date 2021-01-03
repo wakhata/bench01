@@ -3,21 +3,22 @@ import "./App.css";
 import { Layout, Avatar, Menu, Breadcrumb } from "antd";
 import Title from "antd/lib/typography/Title";
 import SubMenu from "antd/lib/menu/SubMenu";
+import Dashboard from "./Dashboard";
 
 const { Header, Footer, Sider, Content } = Layout;
 
-function App() {
+export default function App() {
   return (
     <div className='App'>
       <Layout>
-        <Header style={{ padding: 10 }}>
-          <Avatar style={{ float: "right" }} src='./user.png' />
+        <Header style={{ background: "#80d0c7", padding: 10 }}>
+          <Avatar style={{ float: "right" }} src='./assets/user2.jpg' />
           <Title style={{ color: "white" }} level={3}>
-            Bench
+            Starecon
           </Title>
         </Header>
         <Layout>
-          <Sider>
+          <Sider style={{ background: "#596164" }}>
             <Menu defaultSelectedKeys={["1"]} mode='inline'>
               <Menu.Item key='Dashboard'>Dashboard</Menu.Item>
               <SubMenu
@@ -43,7 +44,7 @@ function App() {
                 <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
               </Breadcrumb>
               <div style={{ background: "#fff", padding: 20, minHeight: 580 }}>
-                Content
+                <Dashboard />
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
@@ -55,5 +56,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
